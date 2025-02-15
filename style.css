@@ -1,0 +1,244 @@
+/* styles.css */
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    font-size: 50px; /* Taille du texte */
+    font-weight: bold; /* Gras */
+}
+
+.virtual {
+    color: #fff; /* Couleur blanche pour "virtual" */
+}
+
+.espace {
+    color: #ff7200; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: relative; /* Nécessaire pour positionner le logo en absolu */
+}
+
+nav {
+    margin-top: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrer les éléments de la barre de menu */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    
+    font-weight: bold;
+    padding: 10px 15px; /* Ajouter du padding pour agrandir la zone cliquable */
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Changer la couleur de fond au survol */
+    color: #ff7200; /* Assurer que le texte reste blanc au survol */
+}
+
+
+
+
+.publicite {
+    padding: 20px;
+}
+
+.offres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les offres */
+}
+
+.offre {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    flex: 1 1 calc(20.2020% - 20px); /* Minimum 3 offres par ligne */
+    box-sizing: border-box;
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+    font-size: 12px; /* Réduire la taille des labels */
+    color: #00ff00; /* Couleur néon verte */
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 3px; /* Réduire le padding des champs de saisie */
+    font-size: 12px; /* Réduire la taille du texte des champs de saisie */
+    border: 1px solid #00ffff; /* Bordure néon verte */
+    background-color: #ffffff; /* Fond noir */
+    color: #000000; /* Texte néon vert */
+    height: 30px; /* Définir la hauteur des champs de saisie */
+    width: 200px; /* Définir la largeur des champs de saisie */
+}
+
+form button {
+    margin-top: 10px;
+    padding: 5px 10px; /* Réduire le padding des boutons */
+    font-size: 12px; /* Réduire la taille du texte des boutons */
+    background-color: #46d4ff; /* Fond néon vert */
+    color: #000; /* Texte noir */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition pour l'effet de survol */
+    height: 35px; /* Définir la hauteur des boutons */
+    width: 100px; /* Définir la largeur des boutons */
+}
+
+form button:hover {
+    background-color: #00cc00; /* Changer la couleur de fond au survol */
+}
+
+
+/* Media Queries pour rendre le site responsive */
+
+/* Pour les tablettes */
+@media (max-width: 768px) {
+    .offre {
+        flex: 1 1 calc(50% - 20px); /* Minimum 2 offres par ligne */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
+/* Pour les mobiles */
+@media (max-width: 480px) {
+    .offre {
+        flex: 1 1 calc(100% - 20px); /* 1 offre par ligne */
+    }
+
+    .logo {
+        font-size: 18px; /* Réduire la taille du logo */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    form input, form button {
+        width: 100%; /* Prendre toute la largeur disponible */
+    }
+}
+
+/* Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
